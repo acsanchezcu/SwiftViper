@@ -9,27 +9,20 @@
 import UIKit
 
 class Lib_Presenter: NSObject {
-    
-    var viewController: Lib_ViewController_Protocol!
-    
-}
 
-extension Lib_Presenter: Lib_Presenter_Protocol {
-    
-    func viewIsReady() {
-        viewController.showLoading(loadingMessage: "viewIsReady")
+    func showLoading(loadingMessage: String, viewController: Lib_ViewController_Protocol!) {
+        viewController.showLoading(loadingMessage: loadingMessage)
     }
     
-    func showLoading(loadingMessage: String) {
-        viewController.showLoading(loadingMessage: "Loading, please wait...")
-    }
-    
-    func dismissLoading() {
+    func dismissLoading(viewController: Lib_ViewController_Protocol!) {
         viewController.dismissLoading()
     }
     
-    func showError(error: Error) {
+    func showError(error: Error, viewController: Lib_ViewController_Protocol!) {
         viewController.showError(error: error)
     }
     
+    func showAlertWithTitle(title: String, message: String, viewController: Lib_ViewController_Protocol!) {
+        viewController.showAlertWithTitle(title: title, message: message)
+    }
 }

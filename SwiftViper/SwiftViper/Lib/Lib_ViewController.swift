@@ -9,32 +9,37 @@
 import UIKit
 
 class Lib_ViewController: UIViewController {
-
-//    var presenter: Lib_Presenter_Protocol?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        //        usernameTextField.delegate = presenter
-    }
-    
     
 }
 
-//extension UIViewController: Lib_ViewController_Protocol {
-//    
-//    func showLoading(loadingMessage: String) {
-//        print("\(loadingMessage) > Lib_ViewController")
-//    }
-//    
-//    func dismissLoading() {
-//        print("dismissLoading > Lib_ViewController")
-//    }
-//    
-//    func showError(error: Error) {
-//        let alert_controller = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-//        
-//        present(alert_controller, animated: true, completion: nil)
-//    }
-//    
-//}
+extension Lib_ViewController: Lib_ViewController_Protocol {
+    
+    func showLoading(loadingMessage: String) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func dismissLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    func showError(error: Error) {
+        let alert_controller = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        
+        let ok_action = UIAlertAction.init(title: "Ok", style: .default, handler: nil)
+        
+        alert_controller.addAction(ok_action)
+        
+        present(alert_controller, animated: true, completion: nil)
+    }
+    
+    func showAlertWithTitle(title: String, message: String) {
+        let alert_controller = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        
+        let ok_action = UIAlertAction.init(title: "Ok", style: .default, handler: nil)
+        
+        alert_controller.addAction(ok_action)
+        
+        present(alert_controller, animated: true, completion: nil)
+    }
+    
+}

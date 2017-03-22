@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Login_Presenter: NSObject {
-
+class Login_Presenter: Lib_Presenter {
+    
     var viewController: Login_ViewController_Protocol!
     var interactor: Login_Interactor_Protocol!
     
@@ -19,29 +19,42 @@ extension Login_Presenter: Login_Presenter_Protocol {
     
     func viewIsReady() {
         viewController.usernameTextField.delegate = self
-        viewController.btnContinue.isEnabled = false
+        viewController.passwordTextField.delegate = self
         
         let view_model = ["user", "pass"]
         
         viewController.viewModel = view_model
-        
-        viewController.showLoading(loadingMessage: "")
-        
-        sleep(2)
-        
-        viewController.dismissLoading()
     }
-
+    
+    func btnContinueTapped() {
+        if let username = viewController.usernameTextField.text,
+            let password = viewController.passwordTextField.text {
+            
+            if username.characters.count > 0
+            && password.characters.count > 0 {
+                interactor.login(username: username, password: password)
+            } else {
+                viewController.showAlertWithTitle(title: "Error", message: "username and password fields are mandatory")
+            }
+        }
+    }
+    
+    //COMMON
+    
     func showLoading(loadingMessage: String) {
-        viewController.showLoading(loadingMessage: loadingMessage)
+        super.showLoading(loadingMessage: loadingMessage, viewController: viewController)
     }
     
     func dismissLoading() {
-        viewController.dismissLoading()
+        super.dismissLoading(viewController: viewController)
     }
     
     func showError(error: Error) {
-        viewController.showError(error: error)
+        super.showError(error: error, viewController: viewController)
+    }
+    
+    func showAlertWithTitle(title: String, message: String) {
+        viewController.showAlertWithTitle(title: title, message: message)
     }
     
 }
@@ -49,8 +62,6 @@ extension Login_Presenter: Login_Presenter_Protocol {
 extension Login_Presenter: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        
         
         return true
     }

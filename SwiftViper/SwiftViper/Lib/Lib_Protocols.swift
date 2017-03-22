@@ -15,8 +15,8 @@ protocol Lib_Presenter_Protocol {
     func showLoading(loadingMessage: String)
     func dismissLoading()
     func showError(error: Error)
+    func showAlertWithTitle(title: String, message: String)
     
-//    var viewController: Lib_ViewController_Protocol! { get }
 }
 
 protocol Lib_ViewController_Protocol {
@@ -24,5 +24,6 @@ protocol Lib_ViewController_Protocol {
     func showLoading(loadingMessage: String)
     func dismissLoading()
     func showError(error: Error)
+    func showAlertWithTitle(title: String, message: String)
     
 }

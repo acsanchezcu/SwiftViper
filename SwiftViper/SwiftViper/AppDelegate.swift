@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let viewController = Login_Assembly.sharedInstance.configure()
         
-        window?.rootViewController = viewController
+        let navigationController = UINavigationController.init(rootViewController: viewController)
+        navigationController.navigationBar.isTranslucent = false
+        
+        window?.rootViewController = navigationController
         
         return true
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_ViewController: UIViewController {
+class Login_ViewController: Lib_ViewController {
     
     var presenter: Login_Presenter_Protocol!
     
@@ -16,6 +16,7 @@ class Login_ViewController: UIViewController {
     @IBOutlet weak var passwordTitleLabel: UILabel!
     
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var btnContinue: UIButton!
     
     private var _viewModel: [String]!
@@ -34,37 +35,21 @@ class Login_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.viewIsReady()
+        title = "Login"
         
+        presenter.viewIsReady()
+
 //        usernameTextField.delegate = presenter
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Actions
+    
+    @IBAction func btnContinueTapped(_ sender: Any) {
+        presenter.btnContinueTapped()
+    }
     
 }
 
 extension Login_ViewController: Login_ViewController_Protocol {
-    
-    func showLoading(loadingMessage: String) {
-        print("\(loadingMessage) > Lib_ViewController")
-    }
-    
-    func dismissLoading() {
-        print("dismissLoading > Lib_ViewController")
-    }
-    
-    func showError(error: Error) {
-        let alert_controller = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        
-        present(alert_controller, animated: true, completion: nil)
-    }
     
 }

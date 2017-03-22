@@ -12,10 +12,8 @@ class Login_Assembly: NSObject {
     
     static let sharedInstance = Login_Assembly()
     
-    func configure() -> UIViewController {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        
-        let viewController: Login_ViewController = storyboard.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
+    func configure() -> Login_ViewController {
+        let viewController = Login_ViewController(nibName: "Login_ViewController", bundle: nil)
         
         let interactor = Login_Interactor()
         let presenter = Login_Presenter()
@@ -28,6 +26,8 @@ class Login_Assembly: NSObject {
         
         interactor.presenter = presenter
         interactor.router = router
+        
+        router.viewController = viewController
         
         return viewController
     }

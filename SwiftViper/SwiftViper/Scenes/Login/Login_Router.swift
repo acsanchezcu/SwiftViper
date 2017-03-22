@@ -9,13 +9,21 @@
 import UIKit
 
 class Login_Router: NSObject {
-
+    var viewController: Login_ViewController!
 }
 
 extension Login_Router: Login_Router_Protocol {
     
-    func navigateToHome() {
+    func navigateToHome(user: User) {
         
+        let home_viewController: Home_ViewController = Home_Assembly.sharedInstance.configure()
+        
+        let home_presenter: Home_Presenter = home_viewController.presenter as! Home_Presenter
+        let home_interactor: Home_Interactor = home_presenter.interactor as! Home_Interactor
+        
+        home_interactor.user = user
+        
+        viewController.navigationController?.setViewControllers([ home_viewController], animated: false)
     }
     
 }
