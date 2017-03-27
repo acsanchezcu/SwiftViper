@@ -38,8 +38,6 @@ class Login_ViewController: Lib_ViewController {
         title = "Login"
         
         presenter.viewIsReady()
-        
-        //        usernameTextField.delegate = presenter
     }
     
     // MARK: - Actions
@@ -52,6 +50,9 @@ class Login_ViewController: Lib_ViewController {
         presenter.btnMenuTapped()
     }
     
+    @IBAction func btnRegisterTapped(_ sender: Any) {
+        presenter.btnRegisterTapped()
+    }
 }
 
 extension Login_ViewController: Login_ViewController_Protocol {

@@ -62,8 +62,6 @@ class Menu_ViewController: Lib_ViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: Menu_Section_TableViewCell = tableView.dequeueReusableCell(withIdentifier: "Menu_Section_TableViewCell", for: indexPath) as! Menu_Section_TableViewCell
         
-      //  let cell: Menu_Section_TableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(Menu_Section_TableViewCell.classForCoder())) as! Menu_Section_TableViewCell
-        
         let view_model = viewModels[indexPath.row]
         
         cell.sectionLabel.text = view_model.sectionName

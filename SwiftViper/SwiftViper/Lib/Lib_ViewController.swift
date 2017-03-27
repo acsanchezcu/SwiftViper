@@ -52,7 +52,7 @@ extension Lib_ViewController: Lib_ViewController_Protocol {
         
         let bar_button_item = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(btnMenuTapped))
         
-        bar_button_item.tintColor = UIColor.init(hex: 0x800000, alpha: 1.0)
+        bar_button_item.tintColor = UIColor.white
         
         navigationItem.rightBarButtonItem = bar_button_item
     }

@@ -18,7 +18,12 @@ class Register_Presenter: Lib_Presenter {
 extension Register_Presenter: Register_Presenter_Protocol {
     
     func viewIsReady() {
-        viewController.printMenuButton()
+        viewController.printCloseButton()
+        viewController.countries = ["Spain", "UK", "EEUU"]
+    }
+    
+    func btnCloseTapped() {
+        interactor.dismissViewController()
     }
     
     //COMMON

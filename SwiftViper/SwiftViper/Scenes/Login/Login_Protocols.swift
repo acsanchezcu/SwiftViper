@@ -22,6 +22,7 @@ protocol Login_Presenter_Protocol: UITextFieldDelegate, Lib_Presenter_Protocol {
     var viewController: Login_ViewController_Protocol! { get }
     
     func btnContinueTapped()
+    func btnRegisterTapped()
 }
 
 protocol Login_Interactor_Protocol {
@@ -29,10 +30,12 @@ protocol Login_Interactor_Protocol {
     var router: Login_Router_Protocol! { get }
     
     func login(username: String, password: String)
+    func navigateToRegister()
 }
 
 protocol Login_Router_Protocol {
     var viewController: Login_ViewController! { get }
     
     func navigateToHome(user: User)
+    func navigateToRegister()
 }

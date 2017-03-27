@@ -48,9 +48,8 @@ class Menu_Interactor: NSObject {
     
     fileprivate func getPublicSections() -> [Menu_ViewModel] {
         let login_view_model = Menu_ViewModel.init(sectionName: "Login", scene: .Login)
-        let register_view_model = Menu_ViewModel.init(sectionName: "Register", scene: .Register)
         
-        return [login_view_model, register_view_model]
+        return [login_view_model]
     }
     
     fileprivate func getPrivateSections() -> [Menu_ViewModel] {

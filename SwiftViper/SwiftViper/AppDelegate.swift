@@ -21,7 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = Login_Assembly.sharedInstance.configure()
         
         let navigationController = UINavigationController.init(rootViewController: viewController)
+        
+        navigationController.navigationBar.barTintColor = UIColor.init(hex: 0x2DA9A9, alpha: 1.0)
         navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         Menu_Assembly.sharedInstance.configure(navigationController: navigationController)
         

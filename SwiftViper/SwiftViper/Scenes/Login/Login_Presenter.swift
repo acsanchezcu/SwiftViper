@@ -24,19 +24,6 @@ extension Login_Presenter: Login_Presenter_Protocol {
         viewController.printMenuButton()
     }
     
-    func btnContinueTapped() {
-        if let username = viewController.usernameTextField.text,
-            let password = viewController.passwordTextField.text {
-            
-            if username.characters.count > 0
-            && password.characters.count > 0 {
-                interactor.login(username: username, password: password)
-            } else {
-                viewController.showAlertWithTitle(title: "Error", message: "username and password fields are mandatory")
-            }
-        }
-    }
-    
     //COMMON
     
     func showLoading(loadingMessage: String) {
@@ -55,8 +42,27 @@ extension Login_Presenter: Login_Presenter_Protocol {
         viewController.showAlertWithTitle(title: title, message: message)
     }
     
+    // MARK: - Actions
+    
+    func btnContinueTapped() {
+        if let username = viewController.usernameTextField.text,
+            let password = viewController.passwordTextField.text {
+            
+            if username.characters.count > 0
+                && password.characters.count > 0 {
+                interactor.login(username: username, password: password)
+            } else {
+                viewController.showAlertWithTitle(title: "Error", message: "username and password fields are mandatory")
+            }
+        }
+    }
+    
     func btnMenuTapped() {
         super.btnMenuTapped(viewController: viewController as! UIViewController)
+    }
+    
+    func btnRegisterTapped() {
+        interactor.navigateToRegister()
     }
 }
 

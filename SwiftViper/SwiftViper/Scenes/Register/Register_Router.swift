@@ -14,4 +14,8 @@ class Register_Router: NSObject {
 
 extension Register_Router: Register_Router_Protocol {
     
+    func dismissViewController() {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
 }

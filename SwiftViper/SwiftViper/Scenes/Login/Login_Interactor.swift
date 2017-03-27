@@ -23,4 +23,8 @@ extension Login_Interactor: Login_Interactor_Protocol {
         router.navigateToHome(user: user)
     }
     
+    func navigateToRegister() {
+        router.navigateToRegister()
+    }
+    
 }

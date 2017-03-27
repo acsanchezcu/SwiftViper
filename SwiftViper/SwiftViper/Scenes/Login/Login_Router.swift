@@ -28,4 +28,16 @@ extension Login_Router: Login_Router_Protocol {
         viewController.navigationController?.setViewControllers([ home_viewController], animated: true)
     }
     
+    func navigateToRegister() {
+        let register_viewController: UIViewController = Register_Assembly.sharedInstance.configure()
+        
+        let navigation_controller = UINavigationController.init(rootViewController: register_viewController)
+        
+        navigation_controller.navigationBar.barTintColor = UIColor.init(hex: 0x2DA9A9, alpha: 1.0)
+        navigation_controller.navigationBar.isTranslucent = false
+        navigation_controller.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        viewController.present(navigation_controller, animated: true, completion: nil)
+    }
+    
 }

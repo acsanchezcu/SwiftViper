@@ -17,4 +17,8 @@ class Register_Interactor: NSObject {
 
 extension Register_Interactor: Register_Interactor_Protocol {
     
+    func dismissViewController() {
+        router.dismissViewController()
+    }
+    
 }
