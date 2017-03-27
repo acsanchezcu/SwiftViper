@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SideMenu
+
 class Lib_Presenter: NSObject {
 
     func showLoading(loadingMessage: String, viewController: Lib_ViewController_Protocol!) {
@@ -24,5 +26,9 @@ class Lib_Presenter: NSObject {
     
     func showAlertWithTitle(title: String, message: String, viewController: Lib_ViewController_Protocol!) {
         viewController.showAlertWithTitle(title: title, message: message)
+    }
+    
+    func btnMenuTapped(viewController: UIViewController) {
+        viewController.present(SideMenuManager.menuRightNavigationController!, animated: true, completion: nil)
     }
 }

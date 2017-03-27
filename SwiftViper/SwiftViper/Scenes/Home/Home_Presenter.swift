@@ -21,6 +21,8 @@ extension Home_Presenter: Home_Presenter_Protocol {
         let username = interactor.user.name
         
         viewController.welcomeLabel.text = "Welcome \(username)!"
+        
+        viewController.printMenuButton()
     }
     
     func btnLogoutTapped() {
@@ -45,4 +47,7 @@ extension Home_Presenter: Home_Presenter_Protocol {
         viewController.showAlertWithTitle(title: title, message: message)
     }
     
+    func btnMenuTapped() {
+        super.btnMenuTapped(viewController: viewController as! UIViewController)
+    }
 }

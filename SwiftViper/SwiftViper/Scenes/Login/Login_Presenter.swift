@@ -21,9 +21,7 @@ extension Login_Presenter: Login_Presenter_Protocol {
         viewController.usernameTextField.delegate = self
         viewController.passwordTextField.delegate = self
         
-        let view_model = ["user", "pass"]
-        
-        viewController.viewModel = view_model
+        viewController.printMenuButton()
     }
     
     func btnContinueTapped() {
@@ -57,6 +55,9 @@ extension Login_Presenter: Login_Presenter_Protocol {
         viewController.showAlertWithTitle(title: title, message: message)
     }
     
+    func btnMenuTapped() {
+        super.btnMenuTapped(viewController: viewController as! UIViewController)
+    }
 }
 
 extension Login_Presenter: UITextFieldDelegate {

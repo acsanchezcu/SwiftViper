@@ -23,7 +23,9 @@ extension Login_Router: Login_Router_Protocol {
         
         home_interactor.user = user
         
-        viewController.navigationController?.setViewControllers([ home_viewController], animated: false)
+        home_viewController.navigationItem.hidesBackButton = true
+        
+        viewController.navigationController?.setViewControllers([ home_viewController], animated: true)
     }
     
 }

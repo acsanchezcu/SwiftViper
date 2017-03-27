@@ -38,14 +38,18 @@ class Login_ViewController: Lib_ViewController {
         title = "Login"
         
         presenter.viewIsReady()
-
-//        usernameTextField.delegate = presenter
+        
+        //        usernameTextField.delegate = presenter
     }
     
     // MARK: - Actions
     
     @IBAction func btnContinueTapped(_ sender: Any) {
         presenter.btnContinueTapped()
+    }
+    
+    override func btnMenuTapped(_ sender: Any) {
+        presenter.btnMenuTapped()
     }
     
 }

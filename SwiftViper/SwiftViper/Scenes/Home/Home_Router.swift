@@ -17,6 +17,8 @@ extension Home_Router: Home_Router_Protocol {
     func navigateToLogin() {
         let login_viewController: Login_ViewController = Login_Assembly.sharedInstance.configure()
         
+        login_viewController.navigationItem.hidesBackButton = true
+        
         viewController.navigationController?.setViewControllers([login_viewController], animated: true)
     }
     

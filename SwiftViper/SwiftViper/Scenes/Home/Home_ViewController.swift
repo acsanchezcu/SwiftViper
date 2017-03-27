@@ -20,20 +20,14 @@ class Home_ViewController: Lib_ViewController {
         presenter.viewIsReady()
         
         title = "Home"
-        
-        navigationController?.navigationItem.leftBarButtonItem = nil
-        navigationController?.navigationItem.setHidesBackButton(true, animated: false)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationItem.leftBarButtonItem = nil
-        navigationController?.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     @IBAction func btnLogoutTapped(_ sender: Any) {
         presenter.btnLogoutTapped()
+    }
+    
+    override func btnMenuTapped(_ sender: Any) {
+        presenter.btnMenuTapped()
     }
     
 }

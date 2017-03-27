@@ -42,4 +42,19 @@ extension Lib_ViewController: Lib_ViewController_Protocol {
         present(alert_controller, animated: true, completion: nil)
     }
     
+    func btnMenuTapped(_ sender: Any) {
+        
+    }
+    
+    func printMenuButton() {
+        
+        let image = #imageLiteral(resourceName: "menu_image").imageWithSize(size: CGSize.init(width: 30.0, height: 30.0))
+        
+        let bar_button_item = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(btnMenuTapped))
+        
+        bar_button_item.tintColor = UIColor.init(hex: 0x800000, alpha: 1.0)
+        
+        navigationItem.rightBarButtonItem = bar_button_item
+    }
+    
 }

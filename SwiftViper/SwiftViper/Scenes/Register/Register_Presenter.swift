@@ -18,6 +18,7 @@ class Register_Presenter: Lib_Presenter {
 extension Register_Presenter: Register_Presenter_Protocol {
     
     func viewIsReady() {
+        viewController.printMenuButton()
     }
     
     //COMMON
@@ -38,4 +39,7 @@ extension Register_Presenter: Register_Presenter_Protocol {
         viewController.showAlertWithTitle(title: title, message: message)
     }
     
+    func btnMenuTapped() {
+        super.btnMenuTapped(viewController: viewController as! UIViewController)
+    }
 }

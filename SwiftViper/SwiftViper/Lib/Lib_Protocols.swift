@@ -12,6 +12,8 @@ protocol Lib_Presenter_Protocol {
     
     func viewIsReady()
     
+    func btnMenuTapped()
+    
     func showLoading(loadingMessage: String)
     func dismissLoading()
     func showError(error: Error)
@@ -26,4 +28,6 @@ protocol Lib_ViewController_Protocol {
     func showError(error: Error)
     func showAlertWithTitle(title: String, message: String)
     
+    func printMenuButton()
+    func btnMenuTapped(_ sender: Any)
 }
