@@ -18,9 +18,18 @@ class Login_Interactor: NSObject {
 extension Login_Interactor: Login_Interactor_Protocol {
     
     func login(username: String, password: String) {
-        let user = User.init(name: username)
         
-        router.navigateToHome(user: user)
+        if let user_manage_object = DataManager.sharedInstance.getUser(username: username) {
+            if  user_manage_object.password == password {
+                let user = UserMapper.mapper(userManageObject: user_manage_object)
+                
+                router.navigateToHome(user: user)
+            } else {
+                presenter.showAlertWithTitle(title: "Error", message: "Password is invalid")
+            }
+        } else {
+            presenter.showAlertWithTitle(title: "Error", message: "User not found")
+        }
     }
     
     func navigateToRegister() {

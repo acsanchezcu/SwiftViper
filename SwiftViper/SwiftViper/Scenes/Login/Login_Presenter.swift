@@ -52,7 +52,7 @@ extension Login_Presenter: Login_Presenter_Protocol {
                 && password.characters.count > 0 {
                 interactor.login(username: username, password: password)
             } else {
-                viewController.showAlertWithTitle(title: "Error", message: "username and password fields are mandatory")
+                viewController.showAlertWithTitle(title: "Warning", message: "username and password fields are mandatory")
             }
         }
     }

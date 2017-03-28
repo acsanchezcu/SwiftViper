@@ -12,7 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Register_ViewController">
             <connections>
+                <outlet property="confirmPasswordTextField" destination="TDD-Xc-cLc" id="VuZ-FA-i62"/>
                 <outlet property="countryTextField" destination="Tkd-Jh-aJx" id="7Qz-2e-Lti"/>
+                <outlet property="passwordTextField" destination="kYl-90-SfJ" id="OcN-JL-9wA"/>
+                <outlet property="scrollView" destination="utF-4Z-z1Q" id="d3Q-JX-gnq"/>
+                <outlet property="usernameTextField" destination="iee-oE-QGz" id="ydt-gF-oNz"/>
                 <outlet property="view" destination="iN0-l3-epB" id="JBe-d3-cgZ"/>
             </connections>
         </placeholder>
@@ -135,6 +139,9 @@
                                                     <include reference="RtZ-O6-iVJ"/>
                                                 </mask>
                                             </variation>
+                                            <connections>
+                                                <action selector="btnRegisterTapped:" destination="-1" eventType="touchUpInside" id="wFt-Fl-zW2"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,11 +208,11 @@
                     <exclude reference="fbD-hX-uKa"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="V5E-EH-Itn"/>
                     <exclude reference="2cY-x2-l7H"/>
                     <exclude reference="9al-Jz-6AH"/>
                     <exclude reference="YzF-hY-txd"/>
                     <exclude reference="z7U-LX-a5D"/>
+                    <exclude reference="V5E-EH-Itn"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">

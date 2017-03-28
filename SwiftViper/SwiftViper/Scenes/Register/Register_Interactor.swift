@@ -21,4 +21,14 @@ extension Register_Interactor: Register_Interactor_Protocol {
         router.dismissViewController()
     }
     
+    func saveUser(username: String, password: String, country: String) {
+        if let exist_user = DataManager.sharedInstance.getUser(username: username) {
+            presenter.showAlertWithTitle(title: "Error", message: "'\(exist_user.username!)' is already registered!\nPlease just login.")
+        } else {
+            DataManager.sharedInstance.saveUser(username: username, password: password, country: country)
+            
+            presenter.displayUserStoredSuccessfully()
+        }
+    }
+    
 }

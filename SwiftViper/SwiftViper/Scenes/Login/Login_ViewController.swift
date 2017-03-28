@@ -37,7 +37,7 @@ class Login_ViewController: Lib_ViewController {
         
         title = "Login"
         
-        presenter.viewIsReady()
+        presenter.viewIsReady()  
     }
     
     // MARK: - Actions

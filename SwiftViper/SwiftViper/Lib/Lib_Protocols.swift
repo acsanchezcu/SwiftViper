@@ -27,6 +27,7 @@ protocol Lib_ViewController_Protocol {
     func dismissLoading()
     func showError(error: Error)
     func showAlertWithTitle(title: String, message: String)
+    func showAlertController(_ alertController: UIAlertController)
     
     func printMenuButton()
     func btnMenuTapped(_ sender: Any)

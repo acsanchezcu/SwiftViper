@@ -9,9 +9,23 @@
 import UIKit
 
 class User: NSObject {
-    let name: String
+    let username: String
+    let password: String
+    let country: String
     
-    init(name: String) {
-        self.name = name
+    init(username: String, password: String, country: String) {
+        self.username = username
+        self.password = password
+        self.country = country
     }
+}
+
+class UserMapper: NSObject {
+    
+    class func mapper(userManageObject: UserManageObject) -> User {
+        let user = User.init(username: userManageObject.username!, password: userManageObject.password!, country: userManageObject.country!)
+        
+        return user
+    }
+    
 }

@@ -49,6 +49,11 @@
 		34DE4BFA1E8297CD000CD117 /* Menu_Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE4BF31E8297CD000CD117 /* Menu_Router.swift */; };
 		34DE4BFB1E8297CD000CD117 /* Menu_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE4BF41E8297CD000CD117 /* Menu_ViewController.swift */; };
 		34DE4BFC1E8297CD000CD117 /* Menu_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34DE4BF51E8297CD000CD117 /* Menu_ViewController.xib */; };
+		34E69B5E1E894E2200B87181 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E69B5D1E894E2200B87181 /* UIScrollView+Extension.swift */; };
+		34E69B641E89676200B87181 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E69B631E89676200B87181 /* DataManager.swift */; };
+		34E69B671E89676E00B87181 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34E69B651E89676E00B87181 /* Data.xcdatamodeld */; };
+		34E69B6E1E8968EF00B87181 /* UserManageObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E69B6C1E8968EF00B87181 /* UserManageObject+CoreDataClass.swift */; };
+		34E69B6F1E8968EF00B87181 /* UserManageObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E69B6D1E8968EF00B87181 /* UserManageObject+CoreDataProperties.swift */; };
 		E6DD17D01E79F551494AE0FD /* Pods_SwiftViper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0716CA165EEA5F939A513F0 /* Pods_SwiftViper.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +103,11 @@
 		34DE4BF31E8297CD000CD117 /* Menu_Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu_Router.swift; sourceTree = "<group>"; };
 		34DE4BF41E8297CD000CD117 /* Menu_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu_ViewController.swift; sourceTree = "<group>"; };
 		34DE4BF51E8297CD000CD117 /* Menu_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu_ViewController.xib; sourceTree = "<group>"; };
+		34E69B5D1E894E2200B87181 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		34E69B631E89676200B87181 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		34E69B661E89676E00B87181 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		34E69B6C1E8968EF00B87181 /* UserManageObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserManageObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		34E69B6D1E8968EF00B87181 /* UserManageObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserManageObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6DAA0935125B0795BB8D7A62 /* Pods-SwiftViper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftViper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftViper/Pods-SwiftViper.debug.xcconfig"; sourceTree = "<group>"; };
 		A0716CA165EEA5F939A513F0 /* Pods_SwiftViper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftViper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +145,7 @@
 		342C19EE1E7FEE2C00BDA3D0 /* SwiftViper */ = {
 			isa = PBXGroup;
 			children = (
+				34E69B5F1E8963C400B87181 /* Utils */,
 				34A450CF1E82A71D00069D56 /* Extensions */,
 				342C1A1D1E8007C300BDA3D0 /* Lib */,
 				342C1A0E1E7FF53200BDA3D0 /* Scenes */,
@@ -196,6 +207,7 @@
 			children = (
 				34A450D21E82A76300069D56 /* UIImage+Extension.swift */,
 				34A450D41E82A8CC00069D56 /* UIColor+Extension.swift */,
+				34E69B5D1E894E2200B87181 /* UIScrollView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +272,25 @@
 				342C6A0B1E88FD5100A1E709 /* Menu_Enums.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		34E69B5F1E8963C400B87181 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				34E69B621E89676200B87181 /* DataManager */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		34E69B621E89676200B87181 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				34E69B6C1E8968EF00B87181 /* UserManageObject+CoreDataClass.swift */,
+				34E69B6D1E8968EF00B87181 /* UserManageObject+CoreDataProperties.swift */,
+				34E69B631E89676200B87181 /* DataManager.swift */,
+				34E69B651E89676E00B87181 /* Data.xcdatamodeld */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		6D2BCC2F6BBFD3F1CAFA06FD /* Pods */ = {
@@ -417,22 +448,27 @@
 				342C1A1F1E8007CF00BDA3D0 /* Lib_Protocols.swift in Sources */,
 				342C1A181E7FF53200BDA3D0 /* Login_Interactor.swift in Sources */,
 				34A450D91E82C3DD00069D56 /* Menu_Section_TableViewCell.swift in Sources */,
+				34E69B6E1E8968EF00B87181 /* UserManageObject+CoreDataClass.swift in Sources */,
 				342C1A1A1E7FF53200BDA3D0 /* Login_Protocols.swift in Sources */,
 				34DE4BEB1E827055000CD117 /* Register_Router.swift in Sources */,
 				342C1A191E7FF53200BDA3D0 /* Login_Presenter.swift in Sources */,
 				34DE4BEC1E827055000CD117 /* Register_ViewController.swift in Sources */,
 				34DE4BFA1E8297CD000CD117 /* Menu_Router.swift in Sources */,
 				34DE4BEA1E827055000CD117 /* Register_Protocols.swift in Sources */,
+				34E69B5E1E894E2200B87181 /* UIScrollView+Extension.swift in Sources */,
 				34DE4BE91E827055000CD117 /* Register_Presenter.swift in Sources */,
 				345C600D1E80436A00625792 /* Lib_ViewController.swift in Sources */,
+				34E69B671E89676E00B87181 /* Data.xcdatamodeld in Sources */,
 				34A450DD1E82C53C00069D56 /* Menu_ViewModel.swift in Sources */,
 				34DE4BF71E8297CD000CD117 /* Menu_Interactor.swift in Sources */,
 				34DE4BF91E8297CD000CD117 /* Menu_Protocols.swift in Sources */,
 				34CEADC01E81793300FB2E70 /* Home_Assembly.swift in Sources */,
 				34DE4BE71E827055000CD117 /* Register_Assembly.swift in Sources */,
 				342C6A0C1E88FD5100A1E709 /* Menu_Enums.swift in Sources */,
+				34E69B6F1E8968EF00B87181 /* UserManageObject+CoreDataProperties.swift in Sources */,
 				342C19F01E7FEE2C00BDA3D0 /* AppDelegate.swift in Sources */,
 				34CEADC51E81793300FB2E70 /* Home_ViewController.swift in Sources */,
+				34E69B641E89676200B87181 /* DataManager.swift in Sources */,
 				34DE4BF61E8297CD000CD117 /* Menu_Assembly.swift in Sources */,
 				34A450D51E82A8CC00069D56 /* UIColor+Extension.swift in Sources */,
 				34CEADC31E81793300FB2E70 /* Home_Protocols.swift in Sources */,
@@ -616,6 +652,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		34E69B651E89676E00B87181 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				34E69B661E89676E00B87181 /* Data.xcdatamodel */,
+			);
+			currentVersion = 34E69B661E89676E00B87181 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 342C19E41E7FEE2C00BDA3D0 /* Project object */;
 }

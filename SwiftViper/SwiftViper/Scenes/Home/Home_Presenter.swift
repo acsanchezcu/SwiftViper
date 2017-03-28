@@ -18,7 +18,7 @@ class Home_Presenter: Lib_Presenter {
 extension Home_Presenter: Home_Presenter_Protocol {
     
     func viewIsReady() {
-        let username = interactor.user.name
+        let username = interactor.user.username
         
         viewController.welcomeLabel.text = "Welcome \(username)!"
         

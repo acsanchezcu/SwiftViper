@@ -10,7 +10,11 @@ import UIKit
 
 class Register_ViewController: Lib_ViewController {
     
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var presenter: Register_Presenter_Protocol!
     
@@ -29,6 +33,8 @@ class Register_ViewController: Lib_ViewController {
         
         title = "Register"
         
+        scrollView.makeAwareOfKeyboard()
+        
         presenter.viewIsReady()
         
         let pickerView = UIPickerView()
@@ -46,6 +52,10 @@ class Register_ViewController: Lib_ViewController {
         presenter.btnCloseTapped()
     }
     
+    @IBAction func btnRegisterTapped(_ sender: Any) {
+        presenter.btnRegisterTapped()
+    }
+    
     @IBAction func btnCountryTapped(_ sender: Any) {
         countryTextField.becomeFirstResponder()
     }
@@ -54,7 +64,7 @@ class Register_ViewController: Lib_ViewController {
 extension Register_ViewController: Register_ViewController_Protocol {
     
     func printCloseButton() {
-        let image = #imageLiteral(resourceName: "close_image").imageWithSize(size: CGSize.init(width: 30.0, height: 30.0))
+        let image = #imageLiteral(resourceName: "close_image").imageWithSize(size: CGSize.init(width: 25.0, height: 25.0))
         
         let bar_button_item = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(btnCloseTapped))
         

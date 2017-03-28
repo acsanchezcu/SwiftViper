@@ -10,6 +10,17 @@ import UIKit
 
 class Lib_ViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tap_gesture = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+        
+        view.addGestureRecognizer(tap_gesture)
+    }
+    
+    func hideKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
 }
 
 extension Lib_ViewController: Lib_ViewController_Protocol {
@@ -42,13 +53,17 @@ extension Lib_ViewController: Lib_ViewController_Protocol {
         present(alert_controller, animated: true, completion: nil)
     }
     
+    func showAlertController(_ alertController: UIAlertController) {
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func btnMenuTapped(_ sender: Any) {
         
     }
     
     func printMenuButton() {
         
-        let image = #imageLiteral(resourceName: "menu_image").imageWithSize(size: CGSize.init(width: 30.0, height: 30.0))
+        let image = #imageLiteral(resourceName: "menu_image").imageWithSize(size: CGSize.init(width: 25.0, height: 25.0))
         
         let bar_button_item = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(btnMenuTapped))
         
