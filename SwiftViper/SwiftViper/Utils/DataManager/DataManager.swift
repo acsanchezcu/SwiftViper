@@ -60,6 +60,23 @@ class DataManager {
         }
     }
     
+    func saveNote(username: String, title: String, content: String) {
+        if let user_manage_object = getUser(username: username) {
+            let note_manage_object = NSEntityDescription.insertNewObject(forEntityName: "NoteManageObject", into: manageObjectContext) as! NoteManageObject
+            
+            note_manage_object.title = title
+            note_manage_object.content = content
+            note_manage_object.relationship = user_manage_object
+            note_manage_object.date = NSDate.init()
+            
+            do {
+                try manageObjectContext.save()
+            } catch  {
+                fatalError("fatal error saving user")
+            }
+        }
+    }
+    
     func getUsers() -> [UserManageObject]? {
         let fetch_request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserManageObject")
         
@@ -88,4 +105,20 @@ class DataManager {
         
         return nil
     }
+    
+    func getNotes(username: String) -> [NoteManageObject]? {
+        let fetch_request = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteManageObject")
+        fetch_request.predicate = NSPredicate(format: "relationship.username == %@", username)
+        
+        do {
+            let notes = try manageObjectContext.fetch(fetch_request) as! [NoteManageObject]
+            
+            return notes
+        } catch {
+            fatalError("fatal error fetching users")
+        }
+        
+        return nil
+    }
+    
 }

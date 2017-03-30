@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.barTintColor = UIColor.init(hex: 0x2DA9A9, alpha: 1.0)
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController.navigationBar.tintColor = UIColor.white
         
         Menu_Assembly.sharedInstance.configure(navigationController: navigationController)
         

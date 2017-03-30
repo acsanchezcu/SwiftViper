@@ -23,4 +23,21 @@ extension Home_Interactor: Home_Interactor_Protocol {
         router.navigateToLogin()
     }
     
+    func getNotes() {
+        let notes_manage_objects = DataManager.sharedInstance.getNotes(username: user.username)
+        
+        var notes: [Note] = []
+        
+        for note_manage_object in notes_manage_objects! {
+            let note = NoteMapper.mapper(noteManageObject: note_manage_object)
+            notes.append(note)
+        }
+        
+        presenter.displayNotes(notes: notes)
+    }
+    
+    func navigateToAddNote() {
+        router.navigateToAddNote(user: user)
+    }
+    
 }

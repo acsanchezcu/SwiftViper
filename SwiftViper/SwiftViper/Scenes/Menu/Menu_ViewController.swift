@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Menu_ViewController: Lib_ViewController, UITableViewDataSource, UITableViewDelegate {
+class Menu_ViewController: Lib_ViewController {
     
     // MARK: - Outlets
     
@@ -51,10 +51,9 @@ class Menu_ViewController: Lib_ViewController, UITableViewDataSource, UITableVie
         presenter.viewWasShown()
     }
     
-    // MARK: - Delegates
-    
-    // MARK: - UITableViewDataSource
-    
+}
+
+extension Menu_ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModels.count
     }
@@ -68,14 +67,16 @@ class Menu_ViewController: Lib_ViewController, UITableViewDataSource, UITableVie
         
         return cell
     }
-    
-    // MARK: - UITableViewDelegate
+}
+
+extension Menu_ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let view_model = viewModels[indexPath.row]
         
         presenter.didTapped(scene: view_model.scene)
     }
+    
 }
 
 extension Menu_ViewController: Menu_ViewController_Protocol {

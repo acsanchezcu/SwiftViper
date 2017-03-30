@@ -18,15 +18,30 @@ class Home_Presenter: Lib_Presenter {
 extension Home_Presenter: Home_Presenter_Protocol {
     
     func viewIsReady() {
-        let username = interactor.user.username
-        
-        viewController.welcomeLabel.text = "Welcome \(username)!"
-        
         viewController.printMenuButton()
+    }
+    
+    func viewIsShown() {
+        interactor.getNotes()
+    }
+    
+    func displayNotes(notes: [Note]) {
+        var view_models: [Home_Note_ViewModel] = []
+        
+        for note in notes {
+            let view_model = Home_Note_ViewModelMapper.mapper(note: note)
+            view_models.append(view_model)
+        }
+        
+        viewController.viewModels = view_models
     }
     
     func btnLogoutTapped() {
         interactor.logout()
+    }
+    
+    func btnAddNoteTapped() {
+        interactor.navigateToAddNote()
     }
     
     //COMMON

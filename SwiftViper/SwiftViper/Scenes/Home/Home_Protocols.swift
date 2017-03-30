@@ -11,13 +11,17 @@ import UIKit
 protocol Home_ViewController_Protocol: Lib_ViewController_Protocol {
     var presenter: Home_Presenter_Protocol! { get }
     
-    weak var welcomeLabel: UILabel! { get }
+    var viewModels: [Home_Note_ViewModel] { get set }
 }
 
 protocol Home_Presenter_Protocol: UITextFieldDelegate, Lib_Presenter_Protocol {
     var viewController: Home_ViewController_Protocol! { get }
     
+    func viewIsShown()
+    func displayNotes(notes: [Note])
+    
     func btnLogoutTapped()
+    func btnAddNoteTapped()
 }
 
 protocol Home_Interactor_Protocol {
@@ -26,11 +30,14 @@ protocol Home_Interactor_Protocol {
     
     var user: User! { get }
     
+    func getNotes()
     func logout()
+    func navigateToAddNote()
 }
 
 protocol Home_Router_Protocol {
     var viewController: Home_ViewController! { get }
-    
+
     func navigateToLogin()
+    func navigateToAddNote(user : User)
 }
